@@ -1,11 +1,14 @@
+import CandyImg from "../img/candy.png"
+
 class Boot extends Phaser.State {
     preload() {
-        game.load.image("candy", "img/candy.png")
+        this.game.load.image("candy", CandyImg)
     }
 
     create() {
-        candy = game.add.sprite(0, 0, "candy")
-        candy.setAnchorTo(0.5, 0.5)
+        this.candy = this.game.add.sprite(0, 0, "candy")
+        this.candy.anchor.setTo(0.5, 0.5)
+        console.log("added")
     }
 }
 

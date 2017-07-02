@@ -5,5 +5,20 @@ module.exports = {
     output: {
         filename: "Game.js",
         path: path.resolve(__dirname, "dist")
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(png|svg|jpg|gif)/,
+                use: ["file-loader"]
+            },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules)/,
+                use: {
+                    loader: 'babel-loader'
+                }
+            }
+        ]
     }
 }
